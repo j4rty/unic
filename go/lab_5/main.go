@@ -209,7 +209,9 @@ func main() {
 
 	wg.Add(3)
 	go computer1.PrintInfo(&wg)
+
 	go laptop1.PrintInfo(&wg)
+
 	go view1.PrintInfo(&wg)
 
 	wg.Wait()
