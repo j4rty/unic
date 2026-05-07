@@ -43,20 +43,6 @@ func server(ch <-chan string, wg *sync.WaitGroup) {
 	}
 }
 
-func user1(ch chan<- string, wg *sync.WaitGroup) {
-	defer wg.Done()
-
-	var link string
-
-	for i := 1; i <= 5; i++ {
-		fmt.Printf("\n")
-		fmt.Printf("Введите ссылку %d:", i)
-		fmt.Scanln(&link)
-		ch <- link
-		time.Sleep(10 * time.Millisecond)
-	}
-}
-
 func user(ch chan<- string, wg *sync.WaitGroup) {
 	defer wg.Done()
 
